@@ -6,14 +6,10 @@ module.exports = function(grunt) {
 
     browserify: {
       build: {
-        src: [
-          "./node_modules/marked/lib/marked.js"
-        ],
-        dest: "./public/javascripts/bundle.js",
+        src: ["./node_modules/markdown/lib/index.js"],
+        dest: ["./public/javascripts/bundle.js"]
         options: {
-          alias: [
-            "./node_modules/marked/lib/marked.js:marked"
-          ] 
+          alias: ["./node_modules/markdown/lib/index.js:markdown"] 
         }
       }
     },
@@ -31,6 +27,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
 
   // Default task(s).
-  grunt.registerTask('default', ['browserify', 'nodemon']);
+  grunt.registerTask('default', ['nodemon']);
 
 };
